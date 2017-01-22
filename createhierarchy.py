@@ -19,6 +19,7 @@ class Strain:
         self.name = data_strain["Name"]
         self.symbol = data_strain["Symbol"]
         self.category = data_strain["Category"]
+        self.url = "https://www.leafly.com/{}/{}".format(data_strain["Category"], data_strain["UrlName"])
         self.ratings = data_strain["RatingCount"]
         self.level = -1
         self.toplevel = False
@@ -144,6 +145,7 @@ def main(args):
             "label": s.symbol,
             "title": s.name,
             "color": s.colour,
+            "url": s.url,
             "value": s.ratings,
             "mass": len(s.descendants) + 1})
 

@@ -142,6 +142,12 @@
                     document.getElementById("loading").style.display = "none";
                 }, 500);
             });
+
+            network.on("click", function(properties) {
+                if (!properties.nodes) { return; }
+                if (data_nodes[properties.nodes] === undefined) { return; }
+                window.open(data_nodes[properties.nodes].url, "_blank");
+            });
         }
     </script>
 </head>
